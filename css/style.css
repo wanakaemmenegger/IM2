@@ -1,26 +1,74 @@
-/* style.css */
-
-/* Reset default styles */
-body, h1, p {
-    margin: 0;
-    padding: 0;
+/* Reset CSS Browser-Einstellungen */
+* {
+    margin: 0; /* Setzt alle Ränder zurück */
+    padding: 2%; /* Setzt alle Abstände zurück */
+    box-sizing: border-box; /* Ermöglicht, dass Padding und Border innerhalb der Elementgrösse liegen */
 }
 
-/* Set up basic styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: rgb(195, 192, 220); /* Hintergrundfarbe */
+    color: rgb(39, 39, 79); /* Textfarbe */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif; /* Schriftarten */
 }
 
 h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    color: rgb(39, 39, 79); /* Überschriftenfarbe */
+    font-size: 4rem; /* Relative Größe für Skalierung */
+    text-align: center; /* Zentriert den Text */
+    font-weight: bold; /* Fettgedruckt */
 }
 
-p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
+img {
+    width: 100%; /* Bild nimmt die volle Breite des Elternelements ein */
+    filter: opacity(60%); /* Transparenz auf 60% reduziert */
+    border: none; /* Kein Rahmen */
+    border-radius: 10px; /* Abgerundete Ecken */
+}
+
+img:hover {
+    filter: opacity(100%); /* Transparenz auf 100% gesetzt bei Hover */
+}
+
+#anzeige {
+    display: grid; /* Grid-Layout */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Flexible Spaltenanzahl je nach verfügbarer Breite */
+    gap: 12px; /* Abstand zwischen den Grid-Elementen */
+}
+
+#suche {
+    display: grid; /* Grid-Layout */
+    width: 80%; /* Breite von 80% des übergeordneten Elements */
+    font-size: 2rem; /* Schriftgröße für den Suchbereich */
+    margin: 0 auto; /* Zentriert das Element horizontal */
+    margin-top: 2%; /* Abstand nach oben */
+    margin-bottom: 2%; /* Abstand nach unten */
+    padding: 1%; /* Innenabstand */
+    text-align: center; /* Zentriert den Text im Suchbereich */
+    border-radius: 50px; /* Abgerundete Ecken */
+    border: none; /* Kein Rahmen */
+}
+
+#suche:focus {
+    outline: none; /* Entfernt den blauen Umriss bei Fokus */
+}   
+
+/* Media Queries für verschiedene Bildschirmgrößen */
+@media (max-width: 768px) { /* Tablet und kleinere Geräte */
+    h1 {
+        font-size: 3rem; /* Kleinere Schriftgröße für Tablets */
+    }
+    #suche {
+        font-size: 1.5rem; /* Kleinere Schriftgröße */
+        width: 90%; /* Breiter auf Tablets */
+    }
+}
+
+@media (max-width: 480px) { /* Mobiltelefone und kleinere Geräte */
+    h1 {
+        font-size: 2rem; /* Noch kleinere Schriftgröße */
+    }
+    #suche {
+        font-size: 1.25rem; /* Schriftgröße weiter reduziert */
+        width: 95%; /* Breiter für Mobiltelefone */
+    }
 }
