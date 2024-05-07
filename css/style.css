@@ -1,84 +1,102 @@
-/* Reset CSS Browser-Einstellungen */
 * {
-    margin: 0; /* Setzt alle Ränder zurück */
-    padding: 2%; /* Setzt alle Abstände zurück */
-    box-sizing: border-box; /* Ermöglicht, dass Padding und Border innerhalb der Elementgrösse liegen */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: rgb(195, 192, 220); /* Hintergrundfarbe */
-    color: rgb(39, 39, 79); /* Textfarbe */
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif; /* Schriftarten */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    background-color: rgb(195, 192, 220);
+}
+
+#suche {
+    display: block;
+    width: 80%;
+    margin: 2% auto;
+    padding: 1%;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 50px;
 }
 
 h1 {
-    color: rgb(39, 39, 79); /* Überschriftenfarbe */
-    font-size: 4rem; /* Relative Größe für Skalierung */
-    text-align: center; /* Zentriert den Text */
-    font-weight: bold; /* Fettgedruckt */
+    text-align: center; /* Zentriert den Haupttitel */
+    color: rgb(39, 39, 79);
+    font-size: 4rem;
+    margin-bottom: 20px; /* Gibt etwas Abstand nach unten */
 }
-
 
 #anzeige {
-    display: grid; /* Grid-Layout */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Flexible Spaltenanzahl je nach verfügbarer Breite */
-    gap: 12px; /* Abstand zwischen den Grid-Elementen */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
 }
 
-#anzeige img {
-    width: 100%; /* Bild nimmt die volle Breite des Elternelements ein */
-    filter: opacity(60%); /* Transparenz auf 60% reduziert */
-    border: solid white; /* Weißer Rahmen um das Bild */
-    border-radius: 10px; /* Abgerundete Ecken */
-    background-color: white; /* Hintergrundfarbe für den Rahmen */
+.cocktail-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left; /* Setzt den Text linksbündig */
 }
 
-#anzeige img:hover {
-    filter: opacity(100%); /* Transparenz auf 100% gesetzt bei Hover */
+.cocktail-container img {
+    width: 100%;
+    border-radius: 10px;
+    filter: grayscale(100%); /* Anfangszustand in Schwarz-Weiß */
+    transition: filter 0.3s ease; /* Glatte Filter-Änderung beim Hover */
 }
 
-#anzeige h2 {
-    text-align: center; /* Zentriert den Text */
-    font-size: 2rem; /* Schriftgröße für die Überschrift */
-    background-color: seashell; /* Hintergrundfarbe */
+.cocktail-container img:hover {
+    filter: grayscale(0%); /* Setzt die volle Farbsättigung beim Hover */
+    cursor: pointer; /* Ändert den Cursor zum Zeiger, um Interaktivität anzuzeigen */
 }
 
-
-
-#suche {
-    display: grid; /* Grid-Layout */
-    width: 80%; /* Breite von 80% des übergeordneten Elements */
-    font-size: 2rem; /* Schriftgröße für den Suchbereich */
-    margin: 0 auto; /* Zentriert das Element horizontal */
-    margin-top: 2%; /* Abstand nach oben */
-    margin-bottom: 2%; /* Abstand nach unten */
-    padding: 1%; /* Innenabstand */
-    text-align: center; /* Zentriert den Text im Suchbereich */
-    border-radius: 50px; /* Abgerundete Ecken */
-    border: none; /* Kein Rahmen */
+.cocktail-container h2 {
+    color: #27274F;
+    text-align: left; /* Stellt sicher, dass der Titel linksbündig ist */
 }
 
-#suche:focus {
-    outline: none; /* Entfernt den blauen Umriss bei Fokus */
-}   
-
-/* Media Queries für verschiedene Bildschirmgrößen */
-@media (max-width: 768px) { /* Tablet und kleinere Geräte */
-    h1 {
-        font-size: 3rem; /* Kleinere Schriftgröße für Tablets */
-    }
-    #suche {
-        font-size: 1.5rem; /* Kleinere Schriftgröße */
-        width: 90%; /* Breiter auf Tablets */
-    }
+button {
+    font-size: 2rem;
+    padding: 10px 20px;
+    margin: 20px auto;
+    background-color: #27274F;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
 }
 
-@media (max-width: 480px) { /* Mobiltelefone und kleinere Geräte */
-    h1 {
-        font-size: 2rem; /* Noch kleinere Schriftgröße */
-    }
-    #suche {
-        font-size: 1.25rem; /* Schriftgröße weiter reduziert */
-        width: 95%; /* Breiter für Mobiltelefone */
-    }
+button:hover {
+    background-color: #4948A0;
+}
+.image-container {
+    float: left; /* Bild linksbündig*/
+    width: 25%; /* Bild nimmt 25% der Breite ein*/
+    margin-right: 20px; /* Abstand zwischen Bild und Details*/
+}
+
+.detail-image {
+    width: 100%; /* Bild nimmt die volle Breite des Containers ein*/
+    border-radius: 10px; /* Abgerundete Ecken*/
+}
+
+.details-container {
+    float: left; /**/
+    width: 74%; /* Details nehmen den verbleibenden Platz ein*/
+    padding-top: 20px; /* Abstand oben, um mit dem Bild auszurichten*/
+}
+
+.info-container {
+    background-color: #fff; /* Weißer Hintergrund*/
+    padding: 10px; /* Padding für den Text*/
+    margin-bottom: 10px; /* Abstand zwischen den Informationsblöcken */
+    transition: transform 0.3s ease; /* Animation für Hover */
+    border-radius: 10px; /* Abgerundete Ecken*/
+}
+
+.info-container:hover {
+    transform: scale(1.05); /* Vergrößern beim Hover*/
 }
