@@ -25,8 +25,8 @@ function datenDarstellen (cocktails) {
         image.src = cocktail.strDrinkThumb;
         let titel = document.createElement('h2');
         titel.innerText = cocktail.strDrink;
-        div.appendChild(titel);
         div.appendChild(image);
+        div.appendChild(titel);
         anzeige.appendChild(div);
     })
 }

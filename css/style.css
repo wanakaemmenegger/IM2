@@ -18,23 +18,32 @@ h1 {
     font-weight: bold; /* Fettgedruckt */
 }
 
-img {
-    width: 100%; /* Bild nimmt die volle Breite des Elternelements ein */
-    filter: opacity(60%); /* Transparenz auf 60% reduziert */
-    border: none; /* Kein Rahmen */
-    border-radius: 10px; /* Abgerundete Ecken */
-}
-
-img:hover {
-    filter: opacity(100%); /* Transparenz auf 100% gesetzt bei Hover */
-}
-
 
 #anzeige {
     display: grid; /* Grid-Layout */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Flexible Spaltenanzahl je nach verfügbarer Breite */
     gap: 12px; /* Abstand zwischen den Grid-Elementen */
 }
+
+#anzeige img {
+    width: 100%; /* Bild nimmt die volle Breite des Elternelements ein */
+    filter: opacity(60%); /* Transparenz auf 60% reduziert */
+    border: solid white; /* Weißer Rahmen um das Bild */
+    border-radius: 10px; /* Abgerundete Ecken */
+    background-color: white; /* Hintergrundfarbe für den Rahmen */
+}
+
+#anzeige img:hover {
+    filter: opacity(100%); /* Transparenz auf 100% gesetzt bei Hover */
+}
+
+#anzeige h2 {
+    text-align: center; /* Zentriert den Text */
+    font-size: 2rem; /* Schriftgröße für die Überschrift */
+    background-color: seashell; /* Hintergrundfarbe */
+}
+
+
 
 #suche {
     display: grid; /* Grid-Layout */
