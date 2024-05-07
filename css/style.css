@@ -29,6 +29,7 @@ img:hover {
     filter: opacity(100%); /* Transparenz auf 100% gesetzt bei Hover */
 }
 
+
 #anzeige {
     display: grid; /* Grid-Layout */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Flexible Spaltenanzahl je nach verfügbarer Breite */
