@@ -64,7 +64,7 @@ function cocktailDetailsAnzeigen(cocktail) {
     image.className = 'detail-image';
 
     let instructions = document.createElement('div');
-    instructions.innerText = 'Anleitung: ' + cocktail.strInstructions;
+    instructions.innerText = 'Anleitung: ' + cocktail.strInstructionsDE;
     instructions.className = 'info-container';
 
     let glassType = document.createElement('div');
