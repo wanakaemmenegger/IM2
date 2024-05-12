@@ -4,26 +4,50 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    background-color: rgb(195, 192, 220);
+#header {
+    width: 100%;
 }
 
-#suche {
-    display: block;
-    width: 80%;
-    margin: 2% auto;
-    padding: 1%;
-    font-size: 2rem;
+#header-container {
+    position: relative;
+    width: 100%;
     text-align: center;
-    border-radius: 50px;
+}
+
+#header {
+    width: 100%;
+    height: auto;
+}
+
+.centered-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
 }
 
 h1 {
-    text-align: center; /* Zentriert den Haupttitel */
-    color: rgb(39, 39, 79);
     font-size: 4rem;
-    margin-bottom: 20px; /* Gibt etwas Abstand nach unten */
+    margin-bottom: 10px;
+}
+
+#suche {
+    width: 80%;
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    background-color: rgb(242, 249, 252);
+    padding: 2%;
 }
 
 #anzeige {
@@ -37,24 +61,24 @@ h1 {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: left; /* Setzt den Text linksbündig */
+    text-align: left;
 }
 
 .cocktail-container img {
     width: 100%;
     border-radius: 10px;
-    filter: grayscale(100%); /* Anfangszustand in Schwarz-Weiß */
-    transition: filter 0.3s ease; /* Glatte Filter-Änderung beim Hover */
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
 }
 
 .cocktail-container img:hover {
-    filter: grayscale(0%); /* Setzt die volle Farbsättigung beim Hover */
-    cursor: pointer; /* Ändert den Cursor zum Zeiger, um Interaktivität anzuzeigen */
+    filter: grayscale(0%);
+    cursor: pointer;
 }
 
 .cocktail-container h2 {
     color: #27274F;
-    text-align: left; /* Stellt sicher, dass der Titel linksbündig ist */
+    text-align: left;
 }
 
 button {
@@ -72,31 +96,50 @@ button {
 button:hover {
     background-color: #4948A0;
 }
+
 .image-container {
-    float: left; /* Bild linksbündig*/
-    width: 25%; /* Bild nimmt 25% der Breite ein*/
-    margin-right: 20px; /* Abstand zwischen Bild und Details*/
+    float: left;
+    width: 25%;
+    margin-right: 20px;
 }
 
 .detail-image {
-    width: 100%; /* Bild nimmt die volle Breite des Containers ein*/
-    border-radius: 10px; /* Abgerundete Ecken*/
+    width: 100%;
+    border-radius: 10px;
 }
 
 .details-container {
-    float: left; /**/
-    width: 74%; /* Details nehmen den verbleibenden Platz ein*/
-    padding-top: 20px; /* Abstand oben, um mit dem Bild auszurichten*/
+    float: left;
+    width: 74%;
+    padding-top: 20px;
 }
 
 .info-container {
-    background-color: #fff; /* Weißer Hintergrund*/
-    padding: 10px; /* Padding für den Text*/
-    margin-bottom: 10px; /* Abstand zwischen den Informationsblöcken */
-    transition: transform 0.3s ease; /* Animation für Hover */
-    border-radius: 10px; /* Abgerundete Ecken*/
+    padding: 10px; /* Beibehaltung des Innenabstands */
+    margin-bottom: 10px;
+    border-radius: 10px; /* Abgerundete Ecken */
+    background-color: transparent; /* Kein Hintergrund */
+    transition: none; /* Keine Hover-Animation */
 }
 
 .info-container:hover {
-    transform: scale(1.05); /* Vergrößern beim Hover*/
+    transform: none; /* Keine Vergrößerung */
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+        padding: 10px 0;
+    }
+
+    #suche {
+        width: 90%;
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+
+    .centered-content {
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
 }

@@ -1,12 +1,14 @@
 let suche = document.querySelector('#suche');
 let anzeige = document.querySelector('#anzeige');
+let h1Element = document.querySelector('h1');
 let zurueckButton = document.createElement('button');
+let originalTitle = h1Element.innerText; // Originaltitel speichern
 
-// Daten von der API abrufen
+// Funktion zum Abrufen von Daten von der API
 async function holeDaten(url) {
     try {
-        let response = await fetch(url); // Warten auf die Daten von der API
-        return await response.json(); // Umwandeln der Daten in JSON-Format
+        let response = await fetch(url);
+        return await response.json();
     } catch (error) {
         console.error('Fehler beim Laden der Daten:', error);
     }
@@ -16,17 +18,18 @@ async function holeDaten(url) {
 async function initialeDatenLaden() {
     let cocktailDaten = await holeDaten('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a');
     datenDarstellen(cocktailDaten.drinks);
-    suche.style.display = 'block'; // Suchleiste wieder anzeigen
-    zurueckButton.style.display = 'none'; // Zurück-Button verstecken
+    suche.style.display = 'block';
+    zurueckButton.style.display = 'none';
+    h1Element.innerText = originalTitle;
 }
-initialeDatenLaden(); // Funktion beim Laden der Seite ausführen
+initialeDatenLaden();
 
 // Funktion zur Darstellung der Cocktails
 function datenDarstellen(cocktails) {
-    anzeige.innerHTML = ''; // Leeren der Anzeige
+    anzeige.innerHTML = '';
     cocktails.forEach(cocktail => {
         let div = document.createElement('div');
-        div.classList.add('cocktail-container'); // Klasse für Styling hinzufügen
+        div.classList.add('cocktail-container');
 
         let image = document.createElement('img');
         image.src = cocktail.strDrinkThumb;
@@ -35,7 +38,6 @@ function datenDarstellen(cocktails) {
         let titel = document.createElement('h2');
         titel.innerText = cocktail.strDrink;
 
-        // Ereignisbehandler für das Klicken auf einen Cocktail
         div.addEventListener('click', () => {
             cocktailDetailsAnzeigen(cocktail);
         });
@@ -48,10 +50,8 @@ function datenDarstellen(cocktails) {
 
 // Funktion zur Anzeige der Cocktail-Details
 function cocktailDetailsAnzeigen(cocktail) {
-    anzeige.innerHTML = ''; // Leeren der Anzeige für Details
-
-    // Ersetzen des Titels h1 durch den Namen des Cocktails
-    document.querySelector('h1').innerText = cocktail.strDrink;
+    anzeige.innerHTML = '';
+    h1Element.innerText = cocktail.strDrink;
 
     let imageContainer = document.createElement('div');
     imageContainer.className = 'image-container';
@@ -63,8 +63,25 @@ function cocktailDetailsAnzeigen(cocktail) {
     image.alt = 'Bild von ' + cocktail.strDrink;
     image.className = 'detail-image';
 
+    let ingredientsContainer = document.createElement('div');
+    ingredientsContainer.className = 'info-container';
+
+    let ingredientsTitle = document.createElement('h3');
+    ingredientsTitle.innerText = 'Zutaten:';
+    ingredientsContainer.appendChild(ingredientsTitle);
+
+    for (let i = 1; i <= 15; i++) {
+        let ingredientName = cocktail[`strIngredient${i}`];
+        let measurement = cocktail[`strMeasure${i}`];
+        if (ingredientName) {
+            let ingredientItem = document.createElement('div');
+            ingredientItem.innerText = `${measurement || ''} ${ingredientName}`.trim();
+            ingredientsContainer.appendChild(ingredientItem);
+        }
+    }
+
     let instructions = document.createElement('div');
-    instructions.innerText = 'Anleitung: ' + cocktail.strInstructionsDE;
+    instructions.innerText = 'Anleitung: ' + (cocktail.strInstructionsDE || cocktail.strInstructions);
     instructions.className = 'info-container';
 
     let glassType = document.createElement('div');
@@ -72,22 +89,22 @@ function cocktailDetailsAnzeigen(cocktail) {
     glassType.className = 'info-container';
 
     imageContainer.appendChild(image);
+    detailsContainer.appendChild(ingredientsContainer);
     detailsContainer.appendChild(instructions);
     detailsContainer.appendChild(glassType);
 
     anzeige.appendChild(imageContainer);
     anzeige.appendChild(detailsContainer);
 
-    suche.style.display = 'none'; // Suchleiste verstecken
-    zurueckButton.style.display = 'block'; // Zurück-Button anzeigen
+    suche.style.display = 'none';
+    zurueckButton.style.display = 'block';
 }
-
 
 // Zurück-Button konfigurieren
 zurueckButton.innerText = 'Zurück';
-zurueckButton.onclick = initialeDatenLaden; // Zurück zur initialen Ansicht
-document.body.appendChild(zurueckButton); // Button zum Body hinzufügen
-zurueckButton.style.display = 'none'; // Button standardmäßig verstecken
+zurueckButton.onclick = initialeDatenLaden;
+document.body.appendChild(zurueckButton);
+zurueckButton.style.display = 'none';
 
 // Suchfunktion implementieren
 suche.addEventListener('input', async function() {
@@ -98,9 +115,9 @@ suche.addEventListener('input', async function() {
         if (gefundeneCocktails.drinks) {
             datenDarstellen(gefundeneCocktails.drinks);
         } else {
-            anzeige.innerHTML = '<p>Keine Cocktails gefunden.</p>'; // Meldung wenn keine Cocktails gefunden
+            anzeige.innerHTML = '<p>Keine Cocktails gefunden.</p>';
         }
     } else {
-        initialeDatenLaden(); // Zurücksetzen auf initiale Daten, wenn Suchfeld leer ist
+        initialeDatenLaden();
     }
 });
