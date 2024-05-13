@@ -67,7 +67,7 @@ function cocktailDetailsAnzeigen(cocktail) {
     ingredientsContainer.className = 'info-container';
 
     let ingredientsTitle = document.createElement('h3');
-    ingredientsTitle.innerText = 'Zutaten:';
+    ingredientsTitle.innerText = 'Ingredients';
     ingredientsContainer.appendChild(ingredientsTitle);
 
     for (let i = 1; i <= 15; i++) {
@@ -80,18 +80,32 @@ function cocktailDetailsAnzeigen(cocktail) {
         }
     }
 
+    let instructionsContainer = document.createElement('div');
+    instructionsContainer.className = 'info-container';
+
+    let instructionsTitle = document.createElement('h3');
+    instructionsTitle.innerText = 'Instructions';
+    instructionsContainer.appendChild(instructionsTitle);
+
     let instructions = document.createElement('div');
-    instructions.innerText = 'Anleitung: ' + (cocktail.strInstructionsDE || cocktail.strInstructions);
-    instructions.className = 'info-container';
+    instructions.innerText = cocktail.strInstructions || 'No instructions available';
+    instructionsContainer.appendChild(instructions);
+
+    let glassContainer = document.createElement('div');
+    glassContainer.className = 'info-container';
+
+    let glassTitle = document.createElement('h3');
+    glassTitle.innerText = 'Glass';
+    glassContainer.appendChild(glassTitle);
 
     let glassType = document.createElement('div');
-    glassType.innerText = 'Glastyp: ' + cocktail.strGlass;
-    glassType.className = 'info-container';
+    glassType.innerText = cocktail.strGlass || 'No glass information available';
+    glassContainer.appendChild(glassType);
 
     imageContainer.appendChild(image);
     detailsContainer.appendChild(ingredientsContainer);
-    detailsContainer.appendChild(instructions);
-    detailsContainer.appendChild(glassType);
+    detailsContainer.appendChild(instructionsContainer);
+    detailsContainer.appendChild(glassContainer);
 
     anzeige.appendChild(imageContainer);
     anzeige.appendChild(detailsContainer);
@@ -121,3 +135,4 @@ suche.addEventListener('input', async function() {
         initialeDatenLaden();
     }
 });
+
