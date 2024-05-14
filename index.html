@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <title>Cocktail Finder</title>
-    <link href="img/faveicon.ico" rel="icon" type="image/x-icon">
+    <link href="img/favicon.ico" rel="icon" type="image/x-icon">
 </head>
 <body>
     <div id="header-container">
@@ -19,13 +19,14 @@
         </div>
     </div>
     <div class="white-bar">
-        <button class="filter-btn active">All</button>
-        <button class="filter-btn">Vodka</button>
-        <button class="filter-btn">Gin</button>
-        <button class="filter-btn">Rum</button>
-    </div> <!-- Updated white bar under the header with new filter buttons -->
+        <button class="filter-btn active" data-type="a">All</button>
+        <button class="filter-btn" data-type="Vodka">Vodka</button>
+        <button class="filter-btn" data-type="Gin">Gin</button>
+        <button class="filter-btn" data-type="Rum">Rum</button>
+    </div>
     <div id="anzeige"></div>
+    <button id="zurueckButton" style="display: none;">Back to results</button>
 
-    <script src="script.js" type="module"></script>
+    <script src="script.js"></script>
 </body>
 </html>
