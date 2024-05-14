@@ -115,7 +115,7 @@ function cocktailDetailsAnzeigen(cocktail) {
 }
 
 // Zurück-Button konfigurieren
-zurueckButton.innerText = 'Zurück';
+zurueckButton.innerText = 'Back to';
 zurueckButton.onclick = initialeDatenLaden;
 document.body.appendChild(zurueckButton);
 zurueckButton.style.display = 'none';
@@ -136,3 +136,9 @@ suche.addEventListener('input', async function() {
     }
 });
 
+document.querySelectorAll('.filter-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+    });
+});

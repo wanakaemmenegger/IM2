@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <title>Cocktail Finder</title>
     <link href="img/faveicon.ico" rel="icon" type="image/x-icon">
@@ -15,7 +18,12 @@
             <input type="text" id="suche" placeholder="Search for Cocktails"/>
         </div>
     </div>
-    <div class="white-bar"></div> <!-- New white bar under the header -->
+    <div class="white-bar">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Vodka</button>
+        <button class="filter-btn">Gin</button>
+        <button class="filter-btn">Rum</button>
+    </div> <!-- Updated white bar under the header with new filter buttons -->
     <div id="anzeige"></div>
 
     <script src="script.js" type="module"></script>

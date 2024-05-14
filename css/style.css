@@ -39,12 +39,22 @@ h1 {
     font-size: 2rem;
     padding: 10px;
     border-radius: 50px;
+    border: none;
     text-align: center;
     margin: 10px auto;
+    color: #4aa0b2;
+}
+
+#suche::placeholder {
+    color: #4aa0b2;
+}
+
+#suche:focus {
+    outline: none;
 }
 
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    font-family: asap;
     background-color: rgb(225, 243, 250);
 }
 
@@ -59,7 +69,7 @@ body {
     background-color: white;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px #545454;
     text-align: left;
 }
 
@@ -76,25 +86,43 @@ body {
 }
 
 .cocktail-container h2 {
-    color: #27274F;
+    color: #1c3c43;
     text-align: left;
 }
 
 button {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 10px 20px;
-    margin: 20px auto;
-    background-color: #27274F;
-    color: white;
+    margin: 0 10px;
+    background-color: transparent;
+    color: #4aa0b2; /* Default text color */
     border: none;
-    border-radius: 10px;
     cursor: pointer;
-    display: block;
+    position: relative;
 }
 
-button:hover {
-    background-color: #4948A0;
+button:hover, button.active {
+    color: #d66734; /* Orange text color on hover and when active */
+    background-color: transparent;
 }
+
+button::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #d66734; /* Orange underline */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+button:hover::after, button.active::after {
+    width: 100%; /* Underline extends to full width on hover and when active */
+}
+
 
 .image-container {
     display: flex;
@@ -106,7 +134,7 @@ button:hover {
 .detail-image {
     max-width: 80%;
     height: auto;
-    border-radius: 0; /* No rounded edges */
+    border-radius: 0;
 }
 
 .details-container {
@@ -114,16 +142,19 @@ button:hover {
 }
 
 .info-container {
-    padding: 10px; /* Beibehaltung des Innenabstands */
+    padding: 10px;
     margin-bottom: 10px;
-    border-radius: 10px; /* Abgerundete Ecken */
-    background-color: transparent; /* Kein Hintergrund */
+    border-radius: 10px;
+    background-color: transparent;
 }
 
 .white-bar {
     height: 70px;
     background-color: white;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
     margin-bottom: 20px;
@@ -139,6 +170,11 @@ button:hover {
         width: 90%;
         font-size: 1.5rem;
         padding: 8px;
+    }
+
+    .filter-btn, button {
+        font-size: 1.5rem;
+        padding: 8px 16px;
     }
 
     .centered-content {
