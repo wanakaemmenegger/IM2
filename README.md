@@ -9,8 +9,17 @@
 Inhalt: Tools, Learnings, Pains, KI wie genutzt? 
 
 # To Dos
-- Filter hinzufügen (Vodka, Gin, Rum)
-- Suche nach Zutaten oder Cocktails?
-- Header Bild weg bei Detailseite, Zurück zum Seitenanfang bei Detailseite, Titel Cocktail Detailseite anders darstellen
+- Darstellung Header inkl. Titel + weisser Balken in Detailanicht
+- Gewisse Ingredients sind leer? Schuld der API?
+- Klick auf "Logo" für Reset zur Suchmaske
+- Gestalltung Zurück-Buttons
+- Suchfunktion "live" aktualisieren (gieng schon mal)
+- "next" / "previous cocktail of your Search" 
+- Responsible
 - Animationen
-- Footer
+- Strukturierung und Bereinigung Code
+
+# Erledigt
+- Header / Footer
+- Filter hinzufügen (Vodka, Gin, Rum)
+- Suchfunktion Zurück-Button führt zurück zu Suchergebnissen

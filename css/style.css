@@ -7,15 +7,12 @@
 #header-container {
     position: relative;
     width: 100%;
-    margin: 0;
-    padding: 0;
 }
 
 #header {
     display: block;
     width: 100%;
     height: auto;
-    margin: 0;
 }
 
 .centered-content {
@@ -47,6 +44,7 @@ h1 {
 
 #suche::placeholder {
     color: #4aa0b2;
+    font-size: 1.8rem;
 }
 
 #suche:focus {
@@ -54,7 +52,7 @@ h1 {
 }
 
 body {
-    font-family: asap;
+    font-family: 'Asap', sans-serif;
     background-color: rgb(225, 243, 250);
 }
 
@@ -87,7 +85,6 @@ body {
 
 .cocktail-container h2 {
     color: #1c3c43;
-    text-align: left;
 }
 
 button {
@@ -103,7 +100,6 @@ button {
 
 button:hover, button.active {
     color: #d66734; /* Orange text color on hover and when active */
-    background-color: transparent;
 }
 
 button::after {
@@ -123,7 +119,6 @@ button:hover::after, button.active::after {
     width: 100%; /* Underline extends to full width on hover and when active */
 }
 
-
 .image-container {
     display: flex;
     justify-content: center;
@@ -131,21 +126,23 @@ button:hover::after, button.active::after {
     margin-bottom: 20px;
 }
 
-.detail-image {
-    max-width: 80%;
-    height: auto;
-    border-radius: 0;
-}
-
 .details-container {
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detail-bild {
+    max-width: 100%;
+    height: auto;
+    margin-right: 20px;
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, and flex-basis */
 }
 
 .info-container {
     padding: 10px;
     margin-bottom: 10px;
-    border-radius: 10px;
-    background-color: transparent;
+    flex: 2 1 300px; /* Flex-grow, flex-shrink, and flex-basis */
 }
 
 .white-bar {
@@ -155,11 +152,79 @@ button:hover::after, button.active::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
     margin-bottom: 20px;
 }
 
+#zurueckButton {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #4aa0b2; /* Default text color */
+    border: none;
+    cursor: pointer;
+    position: relative;
+    margin: 20px; /* Optional: Adjust margin as needed */
+}
+
+#zurueckButton:hover, #zurueckButton.active {
+    color: #d66734; /* Orange text color on hover and when active */
+}
+
+#zurueckButton::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #d66734; /* Orange underline */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+#zurueckButton:hover::after, #zurueckButton.active::after {
+    width: 100%; /* Underline extends to full width on hover and when active */
+}
+
+.orange-header {
+    background-color: #ffffff; /* Orange Hintergrundfarbe */
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.header-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px; /* Abstand zwischen Icon und Text */
+}
+
+.header-text {
+    font-size: 2rem;
+    color: #4aa0b2; 
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+/* Footer Styling */
+footer {
+    background-color: pink;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.footer-content p {
+    margin: 5px 0;
+}
+
+/* Responsive Styling */
 @media (max-width: 600px) {
     h1 {
         font-size: 2rem;
@@ -180,5 +245,14 @@ button:hover::after, button.active::after {
     .centered-content {
         padding: 10px;
         background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .details-container {
+        flex-direction: column;
+    }
+
+    .detail-bild {
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 }
