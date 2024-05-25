@@ -14,6 +14,7 @@ Inhalt: Tools, Learnings, Pains, KI wie genutzt?
 - Klick auf "Logo" oben für Reset zur Suchmaske / "Homepage"
 - Gestaltung Zurück-Buttons (kleiner, ohne unterstreichen Animation)
 - Suchfunktion "live" aktualisieren (gieng schon mal)
+- Zum Anfang der Seite / nach oben springen, wenn Detail Seite geöffnet wird
 - "next" / "previous cocktail of your Search"?
 - Alle Seiten-Inhalte Englisch - z.B. Fehlermeldungen
 - Responsible
