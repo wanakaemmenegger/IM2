@@ -17,13 +17,18 @@ Inhalt: Tools, Learnings, Pains, KI wie genutzt?
 - Zum Anfang der Seite / nach oben springen, wenn Detail Seite geöffnet wird
 - "next" / "previous cocktail of your Search"?
 - Alle Seiten-Inhalte Englisch - z.B. Fehlermeldungen
-- Responsible
+- Responsive
 - Animationen
 - Strukturierung und Bereinigung Code
+- Zurück-Button ist über Ingredients plaziert
+- Previous und next button animieren
+- Suchleiste responsive machen
+- Vorstellung des Teams integrieren
 
 # Erledigt
 - Header / Footer
 - Filter (All, Vodka, Gin, Rum), verschwindet in Detailansicht
 - Filter "All" ist aktiv wenn man etwas sucht
-- Zurück-Button führt zurück zu Suchergebnissen, Button ist über Ingredients plaziert
+- Zurück-Button führt zurück zu Suchergebnissen,
 - Detailansicht mit Bild (ohne abgerdundete Ecken), Ingredients, Instructions, Glass Type
+- previous und next button sind links und rechts vom Titel platziert und führen zum vorherigen und nachherigen Cocktail
