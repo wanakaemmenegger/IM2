@@ -8,21 +8,25 @@
 
 Inhalt: Tools, Learnings, Pains, KI wie genutzt? 
 
+Suche nach Zutat und Cocktail
+
 # To Dos
-- Darstellung Header inkl. Titel + weisser Balken in Detailanicht
-- Gewisse Ingredients sind leer? Schuld der API?
+- Suche Input, Placeholder weniger Deckkraft, Luppe Icon
+- Hower Bild mit Tranition
+- Sucheregenise ganze Box Coursor
+- Anhand von Gruppierung werden Bilder Detail getauscht (nach Glasstyp)
+- Previous / Next - unter Titel / Rechts Links (Slider mittels Pfeiltaste)
+- Suchfunktion "live" aktualisieren (gieng schon mal)
+- Zurück-Button über Ingredients plazieren (Fixe Plazierung im Bild - Back to top button)
+- Gewisse Ingredients / Instructions sind leer? Schuld der API? - Fehlermeldung einbauen
 - Klick auf "Logo" oben für Reset zur Suchmaske / "Homepage"
 - Gestaltung Zurück-Buttons (kleiner, ohne unterstreichen Animation)
-- Suchfunktion "live" aktualisieren (gieng schon mal)
-- Zum Anfang der Seite / nach oben springen, wenn Detail Seite geöffnet wird
+- Zum Anfang der Seite / nach oben springen, wenn Detail Seite geöffnet wird (Scroll to the top of the page)
 - "next" / "previous cocktail of your Search"?
 - Alle Seiten-Inhalte Englisch - z.B. Fehlermeldungen
 - Responsive
-- Animationen
+- Animationen - Boxen Suchresutlate leicht animieren
 - Strukturierung und Bereinigung Code
-- Zurück-Button ist über Ingredients plaziert
-- Previous und next button animieren
-- Suchleiste responsive machen
 - Vorstellung des Teams integrieren
 
 # Erledigt

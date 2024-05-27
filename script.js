@@ -93,8 +93,9 @@ async function kombinierteSuche(abfrage) {
     let zutatSuchErgebnisse = holeDaten(zutatSuchUrl);
 
     let ergebnisse = await Promise.all([nameSuchErgebnisse, zutatSuchErgebnisse]);
-    let nameErgebnisse = ergebnisse[0].drinks || [];
-    let zutatErgebnisse = ergebnisse[1].drinks || [];
+    console.log(ergebnisse);
+    let nameErgebnisse = ergebnisse[0]?.drinks || [];
+    let zutatErgebnisse = ergebnisse[1]?.drinks || [];
 
     let kombinierteErgebnisse = [...nameErgebnisse];
     let gesehen = new Set(nameErgebnisse.map(drink => drink.idDrink));
