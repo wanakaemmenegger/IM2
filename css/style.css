@@ -323,8 +323,8 @@ footer {
 
 /* Footer Styling */
 footer {
-    background-color: #ffe4e1;
-    color: #1c3c43;
+    background-color: #fbbbbf;
+    color: white;
     text-align: center;
     padding: 20px 0;
     position: relative;
@@ -341,7 +341,7 @@ footer {
 
 .footer-content h2 {
     font-size: 1.5rem;
-    color: #4aa0b2;
+    color: white;
     margin-bottom: 20px;
 }
 
@@ -373,13 +373,13 @@ footer {
 .team-member h3 {
     margin: 10px 0 5px;
     font-size: 1.2rem;
-    color: #4aa0b2;
+    color: white;
 }
 
 .team-member p {
     margin: 0;
     font-size: 0.9rem;
-    color: #545454;
+    color: white;
 }
 
 .footer-bottom {
@@ -389,7 +389,7 @@ footer {
 .footer-bottom p {
     margin: 5px 0;
     font-size: 0.8rem;
-    color: #545454;
+    color: white;
 }
 
 /* Responsive Styling */

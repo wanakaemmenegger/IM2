@@ -8,7 +8,7 @@
 
 Inhalt: Tools, Learnings, Pains, KI wie genutzt? 
 
-Suche nach Zutat und Cocktail
+Suche nach Zutat und Cocktail, ? für live Abfrage Suche
 
 # To Dos
 - Zurück-Button über Ingredients plazieren (Fixe Plazierung im Bild - Back to top button)
@@ -17,12 +17,12 @@ Suche nach Zutat und Cocktail
 - Alle Seiten-Inhalte Englisch - z.B. Fehlermeldungen
 - Klick auf "Logo" oben für Reset zur Suchmaske / "Homepage"
 - Zum Anfang der Seite / nach oben springen, wenn Detail Seite geöffnet wird (Scroll to the top of the page)
+- Suchanfrage leeren sobald Filter angeklickt werden
 
 - Suche Input, Placeholder weniger Deckkraft, Luppe Icon
 - Hower Bild mit Tranition
 - Sucheregenise ganze Box Coursor
 - Responsive (Bilder dürfen bei Suche weniger Ergenissen nicht grösser werden)
-- Vorstellung des Teams integrieren
 
 - Strukturierung und Bereinigung Code
 
@@ -38,3 +38,4 @@ Suche nach Zutat und Cocktail
 - Zurück-Button führt zurück zu Suchergebnissen,
 - Detailansicht mit Bild (ohne abgerdundete Ecken), Ingredients, Instructions, Glass Type
 - previous und next button sind links und rechts vom Titel platziert und führen zum vorherigen und nachherigen Cocktail
+- Vorstellung des Teams integrieren
