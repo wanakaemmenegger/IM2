@@ -21,7 +21,7 @@ Suche nach Zutat und Cocktail
 - Suche Input, Placeholder weniger Deckkraft, Luppe Icon
 - Hower Bild mit Tranition
 - Sucheregenise ganze Box Coursor
-- Responsive ((Bilder dürfen bei Suche weniger Ergenissen nicht grösser werden)
+- Responsive (Bilder dürfen bei Suche weniger Ergenissen nicht grösser werden)
 - Vorstellung des Teams integrieren
 
 - Strukturierung und Bereinigung Code
