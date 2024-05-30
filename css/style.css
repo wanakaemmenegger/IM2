@@ -175,6 +175,10 @@ button:hover::after, button.active::after {
     flex-direction: column;
     align-items: center;
     margin: 20px auto;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
 }
 
 #zurueckButton, #previousButton, #nextButton {
