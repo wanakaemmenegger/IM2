@@ -9,6 +9,9 @@ let previousButton = document.querySelector('#previousButton');
 let nextButton = document.querySelector('#nextButton');
 let cocktailTitleContainer = document.querySelector('#cocktail-title-container');
 
+let headerIcon = document.querySelector('.header-icon'); // Logo im Header
+let headerText = document.querySelector('.header-text'); // Schriftzug im Header
+
 let headerImage = document.querySelector('#header');
 let originalTitel = ueberschrift.innerText; // Originaltitel speichern
 let letzteErgebnisse = []; // Speichern der letzten Such- oder Filterergebnisse
@@ -143,50 +146,53 @@ function cocktailDetailsAnzeigen(cocktail) {
             zutatenContainer.appendChild(zutatElement);
         }
     }
-
+    
     let anleitungContainer = document.createElement('div');
     anleitungContainer.className = 'instructions-list';
-
+    
     let anleitungTitel = document.createElement('h3');
     anleitungTitel.innerText = 'Instructions';
     anleitungContainer.appendChild(anleitungTitel);
-
+    
     let anleitung = document.createElement('div');
     anleitung.innerText = cocktail.strInstructions || 'no instructions available';
     anleitungContainer.appendChild(anleitung);
-
+    
     let glasContainer = document.createElement('div');
     glasContainer.className = 'glasstype-list';
-
+    
     let glasTitel = document.createElement('h3');
     glasTitel.innerText = 'Glass Type';
     glasContainer.appendChild(glasTitel);
-
+    
     let glasTyp = document.createElement('div');
     glasTyp.innerText = cocktail.strGlass || 'Take a glass of your choice';
     glasContainer.appendChild(glasTyp);
-
+    
     infoContainer.appendChild(zutatenContainer);
     infoContainer.appendChild(anleitungContainer);
     infoContainer.appendChild(glasContainer);
-
+    
     detailsBox.appendChild(bild);
     detailsBox.appendChild(infoContainer);
-
+    
     // Button-Container und Titel über dem Inhalt einfügen
     anzeige.appendChild(buttonContainer);
     buttonContainer.style.display = 'flex';
     anzeige.appendChild(detailsBox);
-
+    
     // Titel und Navigationsbuttons anzeigen
     cocktailTitleContainer.style.display = 'flex';
-
+    
     // Ursprünglichen Titel verbergen
     ueberschrift.style.display = 'none';
-
+    
     suche.style.display = 'none';
     filterZeile.style.display = 'none'; // Hide the filter buttons
     zurueckButton.style.display = 'block';
+    
+    // Seite nach oben scrollen
+    window.scrollTo(0, 0);
 }
 
 // Zurück-Button konfigurieren
@@ -199,7 +205,14 @@ zurueckButton.onclick = function() {
     cocktailTitleContainer.style.display = 'none';
     ueberschrift.style.display = 'block';
     ueberschrift.innerText = originalTitel;
+
+    // Seite nach oben scrollen zur Startseite
+    window.scrollTo(0, 0);
 };
+
+// Logo und Schriftzug im Header konfigurieren
+headerIcon.onclick = zurueckButton.onclick;
+headerText.onclick = zurueckButton.onclick;
 
 // Previous-Button konfigurieren
 previousButton.onclick = function() {

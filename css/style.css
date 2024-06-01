@@ -69,6 +69,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px #545454;
     text-align: left;
+    cursor: pointer; /* Zeiger-Cursor bei Hover */
 }
 
 .cocktail-container img {
@@ -80,7 +81,6 @@ body {
 
 .cocktail-container img:hover {
     opacity: 1;
-    cursor: pointer;
 }
 
 .cocktail-container h2 {
@@ -220,20 +220,24 @@ button:hover::after, button.active::after {
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid #ccc;
+
 }
 
 .header-icon {
     width: 50px;
     height: 50px;
     margin-right: 10px; /* Abstand zwischen Icon und Text */
+    cursor: pointer; /* Zeiger-Cursor bei Hover */
 }
+    
 
 .header-text {
     font-size: 2rem;
-    color: #4aa0b2; 
+    color: #4aa0b2;
     font-weight: bold;
     display: flex;
     align-items: center;
+    cursor: pointer; /* Zeiger-Cursor bei Hover */
 }
 
 /* Footer Styling */
@@ -246,6 +250,7 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
 .footer-content p {
     margin: 5px 0;
 }
