@@ -248,7 +248,6 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
 .footer-content p {
     margin: 5px 0;
 }
@@ -287,6 +286,22 @@ footer {
     .detail-bild {
         margin-bottom: 20px;
     }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .team-members {
+        flex-direction: column;
+    }
+
+    .team-member {
+        margin: 10px 0;
+    }
+
+    .team-member img {
+        max-width: 100px;
+    }
 }
 
 .ingredients-list {
@@ -305,11 +320,23 @@ footer {
 }
 
 #previousButton, #nextButton {
+    font-size: 4rem;
+    padding: 10px 20px;
     background: none;
     border: none;
     color: #4aa0b2;
-    font-size: 2rem;
     cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#previousButton {
+    left: 10px;
+}
+
+#nextButton {
+    right: 10px;
 }
 
 #previousButton:hover, #nextButton:hover {

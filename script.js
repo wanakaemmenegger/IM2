@@ -54,6 +54,8 @@ async function initialeDatenLaden() {
     filterZeile.style.display = 'flex';
     ueberschrift.style.display = 'block';
     ueberschrift.innerText = originalTitel;
+    previousButton.style.display = 'none'; // Hide Previous Button on initial load
+    nextButton.style.display = 'none'; // Hide Next Button on initial load
 }
 initialeDatenLaden();
 
@@ -202,6 +204,10 @@ function cocktailDetailsAnzeigen(cocktail) {
     searchWrapper.style.display = 'none'; // Verberge die Suchleiste
     filterZeile.style.display = 'none'; // Hide the filter buttons
     zurueckButton.style.display = 'block';
+
+    // Show Previous and Next buttons
+    previousButton.style.display = 'block';
+    nextButton.style.display = 'block';
     
     // Seite nach oben scrollen
     window.scrollTo(0, 0);
@@ -218,6 +224,10 @@ zurueckButton.onclick = function() {
     cocktailTitleContainer.style.display = 'none';
     ueberschrift.style.display = 'block';
     ueberschrift.innerText = originalTitel;
+
+    // Hide Previous and Next buttons
+    previousButton.style.display = 'none';
+    nextButton.style.display = 'none';
 
     // Seite nach oben scrollen zur Startseite
     window.scrollTo(0, 0);
