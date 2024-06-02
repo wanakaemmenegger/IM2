@@ -290,3 +290,14 @@ async function filterSuche(filter) {
     letzteErgebnisse = kombinierteErgebnisse; // Speichern der Ergebnisse
     datenAnzeigen(kombinierteErgebnisse);
 }
+
+// Event-Listener für die Pfeiltasten hinzufügen
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowLeft') {
+        // Linke Pfeiltaste wurde gedrückt
+        previousButton.click();
+    } else if (event.key === 'ArrowRight') {
+        // Rechte Pfeiltaste wurde gedrückt
+        nextButton.click();
+    }
+});
