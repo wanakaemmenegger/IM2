@@ -12,7 +12,7 @@ Suche nach Zutat und Cocktail, ? für live Abfrage Suche
 
 # To Dos
 
-- Responsive (Bilder dürfen bei Suche weniger Ergenissen nicht grösser werden)
+- Responsive
 
 - Strukturierung und Bereinigung Code
 
@@ -40,3 +40,4 @@ Suche nach Zutat und Cocktail, ? für live Abfrage Suche
 - Gewisse Ingredients / Instructions sind leer? Schuld der API? - Fehlermeldung einbauen
 - Alle Seiten-Inhalte Englisch - z.B. Fehlermeldungen
 - Suchanfrage leeren sobald Filter angeklickt werden
+- Responsive (Bilder dürfen bei Suche weniger Ergenissen nicht grösser werden)
