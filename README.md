@@ -12,9 +12,6 @@ Suche nach Zutat und Cocktail, ? für live Abfrage Suche
 
 # To Dos
 
-- Gewisse Ingredients / Instructions sind leer? Schuld der API? - Fehlermeldung einbauen
-- Alle Seiten-Inhalte Englisch - z.B. Fehlermeldungen
-- Suchanfrage leeren sobald Filter angeklickt werden
 - Responsive (Bilder dürfen bei Suche weniger Ergenissen nicht grösser werden)
 
 - Strukturierung und Bereinigung Code
@@ -40,3 +37,6 @@ Suche nach Zutat und Cocktail, ? für live Abfrage Suche
 - Hover Bild mit Transition
 - Sucheregenise ganze Box Cursor
 - default Cursor bei H1
+- Gewisse Ingredients / Instructions sind leer? Schuld der API? - Fehlermeldung einbauen
+- Alle Seiten-Inhalte Englisch - z.B. Fehlermeldungen
+- Suchanfrage leeren sobald Filter angeklickt werden

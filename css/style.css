@@ -41,7 +41,6 @@
     text-align: center;
     margin: 10px auto;
     color: #4aa0b2;
-    
 }
 
 #suche::placeholder {
@@ -85,7 +84,6 @@ body {
 .cocktail-container img:hover {
     opacity: 1;
 }
-
 
 .cocktail-container h2 {
     color: #1c3c43;
@@ -462,4 +460,20 @@ footer {
     width: 20px;
     height: 20px;
     pointer-events: none;
+}
+
+.clear-icon {
+    position: absolute;
+    right: 40px; /* Positioniert das "X"-Symbol am rechten Rand */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #4aa0b2; /* Farbe anpassen */
+    cursor: pointer;
+    display: none; /* Standardmäßig ausgeblendet */
+}
+
+#suche:focus + .search-icon + .clear-icon, /* Zeigt das "X"-Symbol beim Fokussieren */
+#suche:not(:placeholder-shown) + .search-icon + .clear-icon {
+    display: block;
 }
