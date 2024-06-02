@@ -29,13 +29,13 @@
 #page-title, #cocktail-title {
     font-size: 4rem;
     margin-bottom: 10px;
-    cursor: default; /* Diese Zeile wurde hinzugefügt */
+    cursor: default;
 }
 
 #suche {
     width: calc(100% - 40px);
     font-size: 2rem;
-    padding: 10px 20px 10px 40px; /* Padding angepasst, um Platz für das Lupensymbol zu schaffen */
+    padding: 10px 20px 10px 40px;
     border-radius: 50px;
     border: none;
     text-align: center;
@@ -63,6 +63,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
     padding: 2%;
+    justify-content: start; /* Align items to the start */
 }
 
 .cocktail-container {
@@ -72,13 +73,15 @@ body {
     box-shadow: 0 4px 8px #545454;
     text-align: left;
     cursor: pointer;
+    min-width: 200px;
+    max-width: 200px;
 }
 
 .cocktail-container img {
     width: 100%;
     border-radius: 10px;
     opacity: 0.6;
-    transition: opacity 0.3s ease; /* Transition für die Opazität hinzugefügt */
+    transition: opacity 0.3s ease;
 }
 
 .cocktail-container img:hover {
@@ -262,7 +265,7 @@ footer {
     #suche {
         width: calc(90% - 30px);
         font-size: 1.5rem;
-        padding: 8px 16px 8px 30px; /* Padding angepasst, um Platz für das Lupensymbol zu schaffen */
+        padding: 8px 16px 8px 30px;
     }
 
     .filter-btn, button {
@@ -308,7 +311,7 @@ footer {
 .ingredients-list {
     padding: 10px;
     margin-bottom: 10px;
-    margin-left: 0; /* Einzug entfernen */
+    margin-left: 0;
 }
 
 .ingredients-list h3 {
@@ -320,7 +323,7 @@ footer {
     margin-bottom: 5px;
     font-size: 1rem;
     color: #333;
-    margin-left: -10px; /* Einzug entfernen */
+    margin-left: -10px;
 }
 
 #previousButton, #nextButton {
@@ -454,7 +457,7 @@ footer {
 
 .search-icon {
     position: absolute;
-    left: 40px; /* Positioniert das Lupensymbol am linken Rand */
+    left: 40px;
     top: 50%;
     transform: translateY(-50%);
     width: 20px;
@@ -464,16 +467,16 @@ footer {
 
 .clear-icon {
     position: absolute;
-    right: 40px; /* Positioniert das "X"-Symbol am rechten Rand */
+    right: 40px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.5rem;
-    color: #4aa0b2; /* Farbe anpassen */
+    color: #4aa0b2;
     cursor: pointer;
-    display: none; /* Standardmäßig ausgeblendet */
+    display: none;
 }
 
-#suche:focus + .search-icon + .clear-icon, /* Zeigt das "X"-Symbol beim Fokussieren */
+#suche:focus + .search-icon + .clear-icon,
 #suche:not(:placeholder-shown) + .search-icon + .clear-icon {
     display: block;
 }
