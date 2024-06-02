@@ -150,6 +150,8 @@ function cocktailDetailsAnzeigen(cocktail) {
     zutatenTitel.innerText = 'Ingredients';
     zutatenContainer.appendChild(zutatenTitel);
 
+    let ingredientsAvailable = false;
+
     for (let i = 1; i <= 15; i++) {
         let zutatName = cocktail[`strIngredient${i}`];
         let mass = cocktail[`strMeasure${i}`];
@@ -157,49 +159,56 @@ function cocktailDetailsAnzeigen(cocktail) {
             let zutatElement = document.createElement('div');
             zutatElement.innerText = `${mass || ''} ${zutatName}`.trim();
             zutatenContainer.appendChild(zutatElement);
+            ingredientsAvailable = true;
         }
     }
-    
+
+    if (!ingredientsAvailable) {
+        let noIngredientsMessage = document.createElement('div');
+        noIngredientsMessage.innerText = 'No ingredients available';
+        zutatenContainer.appendChild(noIngredientsMessage);
+    }
+
     let anleitungContainer = document.createElement('div');
     anleitungContainer.className = 'instructions-list';
-    
+
     let anleitungTitel = document.createElement('h3');
     anleitungTitel.innerText = 'Instructions';
     anleitungContainer.appendChild(anleitungTitel);
-    
+
     let anleitung = document.createElement('div');
-    anleitung.innerText = cocktail.strInstructions || 'no instructions available';
+    anleitung.innerText = cocktail.strInstructions || 'No instructions available';
     anleitungContainer.appendChild(anleitung);
-    
+
     let glasContainer = document.createElement('div');
     glasContainer.className = 'glasstype-list';
-    
+
     let glasTitel = document.createElement('h3');
     glasTitel.innerText = 'Glass Type';
     glasContainer.appendChild(glasTitel);
-    
+
     let glasTyp = document.createElement('div');
     glasTyp.innerText = cocktail.strGlass || 'Take a glass of your choice';
     glasContainer.appendChild(glasTyp);
-    
+
     infoContainer.appendChild(zutatenContainer);
     infoContainer.appendChild(anleitungContainer);
     infoContainer.appendChild(glasContainer);
-    
+
     detailsBox.appendChild(bild);
     detailsBox.appendChild(infoContainer);
-    
+
     // Button-Container und Titel über dem Inhalt einfügen
     anzeige.appendChild(buttonContainer);
     buttonContainer.style.display = 'flex';
     anzeige.appendChild(detailsBox);
-    
+
     // Titel und Navigationsbuttons anzeigen
     cocktailTitleContainer.style.display = 'flex';
-    
+
     // Ursprünglichen Titel verbergen
     ueberschrift.style.display = 'none';
-    
+
     suche.style.display = 'none';
     searchWrapper.style.display = 'none'; // Verberge die Suchleiste
     filterZeile.style.display = 'none'; // Hide the filter buttons
@@ -208,7 +217,7 @@ function cocktailDetailsAnzeigen(cocktail) {
     // Show Previous and Next buttons
     previousButton.style.display = 'block';
     nextButton.style.display = 'block';
-    
+
     // Seite nach oben scrollen
     window.scrollTo(0, 0);
 }
