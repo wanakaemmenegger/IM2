@@ -17,6 +17,18 @@ let originalTitel = ueberschrift.innerText; // Originaltitel speichern
 let letzteErgebnisse = []; // Speichern der letzten Such- oder Filterergebnisse
 let aktuellerIndex = 0; // Speichern des aktuellen Cocktail-Index
 
+const searchContainer = document.querySelector('.search-container');
+const searchWrapper = document.querySelector('.search-wrapper'); // Neuer Wrapper für die Suche
+const detailView = document.querySelector('.details-container'); // Beispiel: Detailansicht-Container
+
+if (detailView) {
+    // Wenn die Detailansicht vorhanden ist, blenden Sie die Suchleiste aus
+    searchWrapper.style.display = 'none';
+} else {
+    // Wenn die Detailansicht nicht vorhanden ist, zeigen Sie die Suchleiste an
+    searchWrapper.style.display = 'block';
+}
+
 // Funktion zum Abrufen von Daten von der API
 async function holeDaten(url) {
     try {
@@ -96,7 +108,6 @@ async function kombinierteSuche(abfrage) {
     let zutatSuchErgebnisse = holeDaten(zutatSuchUrl);
 
     let ergebnisse = await Promise.all([nameSuchErgebnisse, zutatSuchErgebnisse]);
-    console.log(ergebnisse);
     let nameErgebnisse = ergebnisse[0]?.drinks || [];
     let zutatErgebnisse = ergebnisse[1]?.drinks || [];
 
@@ -188,6 +199,7 @@ function cocktailDetailsAnzeigen(cocktail) {
     ueberschrift.style.display = 'none';
     
     suche.style.display = 'none';
+    searchWrapper.style.display = 'none'; // Verberge die Suchleiste
     filterZeile.style.display = 'none'; // Hide the filter buttons
     zurueckButton.style.display = 'block';
     
@@ -200,6 +212,7 @@ zurueckButton.onclick = function() {
     headerImage.src = 'img/Cocktail_Finder_Header.jpg'; // Originales Header-Bild wiederherstellen
     datenAnzeigen(letzteErgebnisse); // Letzte Such- oder Filterergebnisse anzeigen
     suche.style.display = 'block';
+    searchWrapper.style.display = 'block'; // Zeige die Suchleiste
     filterZeile.style.display = 'flex'; // Show the filter buttons again
     buttonContainer.style.display = 'none';
     cocktailTitleContainer.style.display = 'none';

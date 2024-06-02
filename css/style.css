@@ -32,9 +32,9 @@
 }
 
 #suche {
-    width: 90%;
+    width: calc(100% - 40px);
     font-size: 2rem;
-    padding: 10px;
+    padding: 10px 20px 10px 40px; /* Padding angepasst, um Platz für das Lupensymbol zu schaffen */
     border-radius: 50px;
     border: none;
     text-align: center;
@@ -45,6 +45,7 @@
 #suche::placeholder {
     color: #4aa0b2;
     font-size: 1.8rem;
+    opacity: 0.5;
 }
 
 #suche:focus {
@@ -69,7 +70,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px #545454;
     text-align: left;
-    cursor: pointer; /* Zeiger-Cursor bei Hover */
+    cursor: pointer;
 }
 
 .cocktail-container img {
@@ -92,14 +93,14 @@ button {
     padding: 10px 20px;
     margin: 0 10px;
     background-color: transparent;
-    color: #4aa0b2; /* Default text color */
+    color: #4aa0b2;
     border: none;
     cursor: pointer;
     position: relative;
 }
 
 button:hover, button.active {
-    color: #d66734; /* Orange text color on hover and when active */
+    color: #d66734;
 }
 
 button::after {
@@ -109,14 +110,14 @@ button::after {
     bottom: 0;
     width: 0%;
     height: 3px;
-    background-color: #d66734; /* Orange underline */
+    background-color: #d66734;
     transition: all 0.3s ease;
     transform: translateX(-50%);
     border-radius: 2px;
 }
 
 button:hover::after, button.active::after {
-    width: 100%; /* Underline extends to full width on hover and when active */
+    width: 100%;
 }
 
 .image-container {
@@ -130,14 +131,14 @@ button:hover::after, button.active::after {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-color: transparent; /* Remove white background */
+    background-color: transparent;
     max-width: 800px;
     margin: 0 auto;
-    gap: 20px; /* Adds space between elements */
+    gap: 20px;
 }
 
 .detail-bild {
-    max-width: 45%; /* Ändert die maximale Breite des Bildes */
+    max-width: 45%;
     height: auto;
     border-radius: 10px;
 }
@@ -147,7 +148,7 @@ button:hover::after, button.active::after {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    max-width: 45%; /* Begrenzen Sie die maximale Breite des Textcontainers */
+    max-width: 45%;
 }
 
 .info-container h3 {
@@ -185,7 +186,7 @@ button:hover::after, button.active::after {
     font-size: 1.5rem;
     padding: 10px 20px;
     background-color: transparent;
-    color: #4aa0b2; /* Default text color */
+    color: #4aa0b2;
     border: none;
     cursor: pointer;
     position: relative;
@@ -193,7 +194,7 @@ button:hover::after, button.active::after {
 }
 
 #zurueckButton:hover, #zurueckButton.active, #previousButton:hover, #previousButton.active, #nextButton:hover, #nextButton.active {
-    color: #d66734; /* Orange text color on hover and when active */
+    color: #d66734;
 }
 
 #zurueckButton::after, #previousButton::after, #nextButton::after {
@@ -203,33 +204,31 @@ button:hover::after, button.active::after {
     bottom: 0;
     width: 0%;
     height: 3px;
-    background-color: #d66734; /* Orange underline */
+    background-color: #d66734;
     transition: all 0.3s ease;
     transform: translateX(-50%);
     border-radius: 2px;
 }
 
 #zurueckButton:hover::after, #zurueckButton.active::after, #previousButton:hover::after, #previousButton.active::after, #nextButton:hover::after, #nextButton.active::after {
-    width: 100%; /* Underline extends to full width on hover and when active */
+    width: 100%;
 }
 
 .orange-header {
-    background-color: #ffffff; /* Orange Hintergrundfarbe */
+    background-color: #ffffff;
     padding: 10px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid #ccc;
-
 }
 
 .header-icon {
     width: 50px;
     height: 50px;
-    margin-right: 10px; /* Abstand zwischen Icon und Text */
-    cursor: pointer; /* Zeiger-Cursor bei Hover */
+    margin-right: 10px;
+    cursor: pointer;
 }
-    
 
 .header-text {
     font-size: 2rem;
@@ -237,10 +236,9 @@ button:hover::after, button.active::after {
     font-weight: bold;
     display: flex;
     align-items: center;
-    cursor: pointer; /* Zeiger-Cursor bei Hover */
+    cursor: pointer;
 }
 
-/* Footer Styling */
 footer {
     background-color: pink;
     color: white;
@@ -255,7 +253,6 @@ footer {
     margin: 5px 0;
 }
 
-/* Responsive Styling */
 @media (max-width: 600px) {
     h1 {
         font-size: 2rem;
@@ -263,9 +260,9 @@ footer {
     }
 
     #suche {
-        width: 90%;
+        width: calc(90% - 30px);
         font-size: 1.5rem;
-        padding: 8px;
+        padding: 8px 16px 8px 30px; /* Padding angepasst, um Platz für das Lupensymbol zu schaffen */
     }
 
     .filter-btn, button {
@@ -330,7 +327,6 @@ footer {
     border-radius: 15px;
 }
 
-/* Footer Styling */
 footer {
     background-color: #fbbbbf;
     color: white;
@@ -359,7 +355,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 40px; /* Increased space between team members */
+    gap: 40px;
 }
 
 .team-member {
@@ -401,7 +397,6 @@ footer {
     color: white;
 }
 
-/* Responsive Styling */
 @media (max-width: 600px) {
     .footer-content {
         flex-direction: column;
@@ -418,4 +413,20 @@ footer {
     .team-member img {
         max-width: 100px;
     }
+}
+
+.search-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.search-icon {
+    position: absolute;
+    left: 40px; /* Positioniert das Lupensymbol am linken Rand */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
 }
