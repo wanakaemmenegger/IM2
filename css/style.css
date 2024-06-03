@@ -64,7 +64,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
     padding: 2%;
-    justify-content: start;
+    justify-content: center; /* Changed to center the cocktail containers */
 }
 
 .cocktail-container {
@@ -80,6 +80,7 @@ body {
 
 .cocktail-container img {
     width: 100%;
+    height: auto;
     border-radius: 10px;
     opacity: 0.6;
     transition: opacity 0.3s ease;
@@ -193,7 +194,7 @@ button:hover::after, button.active::after {
     background-color: white;
     color: #4aa0b2;
     border: none;
-    border-radius: 10px ;
+    border-radius: 10px;
     cursor: pointer;
     position: relative;
     margin: 0 10px;
@@ -263,56 +264,6 @@ footer {
     margin: 5px 0;
 }
 
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2rem;
-        padding: 10px 0;
-    }
-
-    #suche {
-        width: calc(90% - 30px);
-        font-size: 1.5rem;
-        padding: 8px 16px 8px 30px;
-    }
-
-    .filter-btn, button {
-        font-size: 1.5rem;
-        padding: 8px 16px;
-    }
-
-    .centered-content {
-        padding: 10px;
-    }
-
-    .details-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .detail-bild, .info-container {
-        max-width: 100%;
-    }
-
-    .detail-bild {
-        margin-bottom: 20px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-    }
-
-    .team-members {
-        flex-direction: column;
-    }
-
-    .team-member {
-        margin: 10px 0;
-    }
-
-    .team-member img {
-        max-width: 100px;
-    }
-}
 
 .ingredients-list {
     padding: 10px;
@@ -374,7 +325,6 @@ footer {
     padding: 20px 0;
     position: relative;
     width: 100%;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .footer-content {
@@ -407,7 +357,6 @@ footer {
     max-width: 150px;
     height: auto;
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -435,24 +384,6 @@ footer {
     margin: 5px 0;
     font-size: 0.8rem;
     color: white;
-}
-
-@media (max-width: 600px) {
-    .footer-content {
-        flex-direction: column;
-    }
-
-    .team-members {
-        flex-direction: column;
-    }
-
-    .team-member {
-        margin: 10px 0;
-    }
-
-    .team-member img {
-        max-width: 100px;
-    }
 }
 
 .search-wrapper {
@@ -493,22 +424,67 @@ footer {
     }
 
     #suche {
-        font-size: 1.8rem;
-    }
-
-    #suche::placeholder {
         font-size: 1.5rem;
     }
+
+     #suche::placeholder {
+        content: 'Search';
+        font-size: 1.5rem;
+    }
+
 }
 
 @media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+        padding: 10px 0;
+    }
+
+    .filter-btn, button {
+        font-size: 1.5rem;
+        padding: 8px 16px;
+    }
+
+    .centered-content {
+        padding: 10px;
+    }
+
+    .details-container {
+        flex-direction: column;
+        align-items: left;
+    }
+
+    .detail-bild, .info-container {
+        max-width: 100%;
+    }
+
+    .detail-bild {
+        margin-bottom: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .team-members {
+        flex-direction: column;
+    }
+
+    .team-member {
+        margin: 10px 0;
+    }
+
+    .team-member img {
+        max-width: 100px;
+    }
+
     #page-title, #cocktail-title {
         font-size: 2.5rem;
     }
 
     #suche {
-        width: calc(90% - 30px);
-        font-size: 1.5rem;
+        width: 100%;
+        font-size: 1.2rem;
         padding: 8px 16px 8px 30px;
     }
 
@@ -516,27 +492,36 @@ footer {
         content: 'Search';
         font-size: 1.2rem;
     }
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .team-members {
+        flex-direction: column;
+    }
+
+    .team-member {
+        margin: 10px 0;
+    }
+
+    .team-member img {
+        max-width: 100px;
+    }
 }
 
 @media (max-width: 400px) {
     #page-title, #cocktail-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     #suche {
-        font-size: 1.2rem;
+        font-size: 1rem;
         padding: 6px 12px 6px 24px;
+        width: 100%;
     }
 
     #suche::placeholder {
         content: 'Search';
         font-size: 1rem;
-    }
-}
-
-/* New media query to remove white box for specific sizes */
-@media (min-width: 600px) and (max-width: 833px) {
-    .centered-content {
-        background-color: transparent;
     }
 }

@@ -11,7 +11,6 @@ Inhalt: Tools, Learnings, Pains, KI wie genutzt?
 Suche nach Zutat und Cocktail, ? für live Abfrage Suche
 
 # To Dos
-- Text Vorschläge + Korrektur Suche weg
 - Text suche linksbündig
 - Bilder komprimieren
 - Team vorstellen Sätze errgänzen
@@ -25,6 +24,7 @@ Suche nach Zutat und Cocktail, ? für live Abfrage Suche
 
 
 # Erledigt
+- Text Vorschläge + Korrektur Suche weg
 - Suchfunktion "live" aktualisieren (ging schon mal)
 - Header / Footer
 - Filter (All, Vodka, Gin, Rum), verschwindet in Detailansicht
