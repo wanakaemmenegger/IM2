@@ -56,6 +56,7 @@
 body {
     font-family: 'Asap', sans-serif;
     background-color: rgb(225, 243, 250);
+    padding-top: 70px;
 }
 
 #anzeige {
@@ -189,9 +190,10 @@ button:hover::after, button.active::after {
 #zurueckButton, #previousButton, #nextButton {
     font-size: 1.5rem;
     padding: 10px 20px;
-    background-color: transparent;
+    background-color: white;
     color: #4aa0b2;
     border: none;
+    border-radius: 10px ;
     cursor: pointer;
     position: relative;
     margin: 0 10px;
@@ -218,13 +220,17 @@ button:hover::after, button.active::after {
     width: 100%;
 }
 
-.orange-header {
+.white-header {
     background-color: #ffffff;
     padding: 10px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid #ccc;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
 }
 
 .header-icon {
