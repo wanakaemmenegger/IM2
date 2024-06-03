@@ -11,8 +11,12 @@ Inhalt: Tools, Learnings, Pains, KI wie genutzt?
 Suche nach Zutat und Cocktail, ? für live Abfrage Suche
 
 # To Dos
+- Text Vorschläge + Korrektur Suche weg
+- Text suche linksbündig
+- Bilder komprimieren
+- Team vorstellen Sätze errgänzen
 
-- Responsive
+- Responsive (Achtung bei wenigen Cocktail anzeigen)
 
 - Strukturierung und Bereinigung Code
 
