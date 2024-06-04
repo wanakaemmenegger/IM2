@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updatePlaceholder() {
         if (window.innerWidth <= 400) {
             suche.placeholder = 'Search';
-        } else if (window.innerWidth <= 600) {
+        } else if (window.innerWidth <= 1000) {
             suche.placeholder = 'Search for cocktail';
         } else {
             suche.placeholder = 'Search for cocktail or ingredient';
