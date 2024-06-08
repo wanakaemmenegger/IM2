@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         letzteErgebnisse = cocktailDaten.drinks;
         datenAnzeigen(cocktailDaten.drinks);
         suche.style.display = 'block';
+        searchWrapper.style.display = 'block';
         buttonContainer.style.display = 'none';
         cocktailTitleContainer.style.display = 'none';
         filterZeile.style.display = 'flex';
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ueberschrift.innerText = originalTitel;
         previousButton.style.display = 'none';
         nextButton.style.display = 'none';
+        window.scrollTo(0, 0);
     }
     initialeDatenLaden();
 
@@ -244,8 +246,23 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo(0, 0);
     };
 
-    headerIcon.onclick = zurueckButton.onclick;
-    headerText.onclick = zurueckButton.onclick;
+    function resetToInitial() {
+        initialeDatenLaden();
+        suche.value = '';
+        suche.style.display = 'block';
+        searchWrapper.style.display = 'block';
+        filterZeile.style.display = 'flex';
+        buttonContainer.style.display = 'none';
+        cocktailTitleContainer.style.display = 'none';
+        ueberschrift.style.display = 'block';
+        ueberschrift.innerText = originalTitel;
+        previousButton.style.display = 'none';
+        nextButton.style.display = 'none';
+        window.scrollTo(0, 0);
+    }
+
+    headerIcon.onclick = resetToInitial;
+    headerText.onclick = resetToInitial;
 
     previousButton.onclick = function() {
         if (letzteErgebnisse.length > 0) {
@@ -315,10 +332,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function updatePlaceholder() {
-        if (window.innerWidth <= 400) {
+        if (window.innerWidth <= 800) {
             suche.placeholder = 'Search';
         } else if (window.innerWidth <= 1000) {
-            suche.placeholder = 'Search for cocktail';
+            suche.placeholder = 'Search ';
         } else {
             suche.placeholder = 'Search for cocktail or ingredient';
         }

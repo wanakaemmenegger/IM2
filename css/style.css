@@ -34,11 +34,11 @@
 
 #suche {
     width: calc(100% - 40px);
-    font-size: 2rem;
-    padding: 10px 20px 10px 40px;
+    font-size: 1.8rem;
+    padding: 10px 50px 10px 50px;
     border-radius: 50px;
     border: none;
-    text-align: center;
+    text-align: left;
     margin: 10px auto;
     color: #4aa0b2;
 }
@@ -47,6 +47,7 @@
     color: #4aa0b2;
     font-size: 1.8rem;
     opacity: 0.5;
+    text-align: left;
 }
 
 #suche:focus {
@@ -60,11 +61,14 @@ body {
 }
 
 #anzeige {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 40px;
     padding: 2%;
-    justify-content: center; /* Changed to center the cocktail containers */
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .cocktail-container {
@@ -92,6 +96,11 @@ body {
 
 .cocktail-container h2 {
     color: #1c3c43;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.5rem;
+    max-width: 100%;
 }
 
 button {
@@ -141,6 +150,7 @@ button:hover::after, button.active::after {
     max-width: 800px;
     margin: 0 auto;
     gap: 20px;
+    align-items: flex-start; /* Ensures consistent alignment */
 }
 
 .detail-bild {
@@ -152,7 +162,7 @@ button:hover::after, button.active::after {
 .info-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between; /* Ensures the space between elements is consistent */
     align-items: flex-start;
     max-width: 45%;
 }
@@ -264,7 +274,6 @@ footer {
     margin: 5px 0;
 }
 
-
 .ingredients-list {
     padding: 10px;
     margin-bottom: 10px;
@@ -350,30 +359,69 @@ footer {
 
 .team-member {
     text-align: center;
+    width: 150px;
 }
 
-.team-member img {
+.flip-card {
+    position: relative;
     width: 100%;
-    max-width: 150px;
-    height: auto;
+    padding-top: 100%;
+    perspective: 1000px;
+    margin-bottom: 10px;
+}
+
+.flip-card-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.team-member:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flip-card-front {
+    background-color: transparent;
+}
+
+.flip-card-back {
+    background-color: #4aa0b2;
+    color: white;
+    font-size: small;
+    padding: 10%;
+    transform: rotateY(180deg);
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 50%;
     transition: transform 0.3s ease;
 }
 
-.team-member img:hover {
+.team-member:hover .flip-card-front img {
     transform: scale(1.1);
 }
 
-.team-member h3 {
-    margin: 10px 0 5px;
-    font-size: 1.2rem;
-    color: white;
-}
-
-.team-member p {
+.team-member h3, .team-member p {
     margin: 0;
-    font-size: 0.9rem;
-    color: white;
 }
 
 .footer-bottom {
@@ -419,30 +467,13 @@ footer {
 }
 
 @media (max-width: 800px) {
-    #page-title, #cocktail-title {
-        font-size: 3rem;
-    }
-
-    #suche {
-        font-size: 1.5rem;
-    }
-
-     #suche::placeholder {
-        font-size: 1.5rem;
-        width: 100%;
-        padding: 6px 12px 6px 24px;
-    }
-
-}
-
-@media (max-width: 600px) {
     h1 {
-        font-size: 1.7rem;
+        font-size: 2rem;
         padding: 10px 0;
     }
 
     .filter-btn, button {
-        font-size: 1.5rem;
+        font-size: 2rem;
         padding: 8px 16px;
     }
 
@@ -463,20 +494,60 @@ footer {
         margin-bottom: 20px;
     }
 
-    .footer-content {
+    #page-title, #cocktail-title {
+        font-size: 2.5rem;
+    }
+
+    #suche {
+        width: 100%;
+        font-size: 1.7rem;
+        padding: 10px 60px 6px 60px;
+        text-align: left;
+    }
+
+    #suche::placeholder {
+        font-size: 1.7rem;
+        text-align: left;
+    }
+
+    .search-icon {
+        left: 25px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .clear-icon {
+        right: 25px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.2rem;
+        padding: 10px 0;
+    }
+
+    .filter-btn, button {
+        font-size: 1.2rem;
+        padding: 8px 16px;
+    }
+
+    .centered-content {
+        padding: 10px;
+    }
+
+    .details-container {
         flex-direction: column;
+        align-items: left;
     }
 
-    .team-members {
-        flex-direction: column;
+    .detail-bild, .info-container {
+        max-width: 100%;
     }
 
-    .team-member {
-        margin: 10px 0;
-    }
-
-    .team-member img {
-        max-width: 100px;
+    .detail-bild {
+        margin-bottom: 20px;
     }
 
     #page-title, #cocktail-title {
@@ -486,15 +557,24 @@ footer {
     #suche {
         width: 100%;
         font-size: 1.2rem;
-        padding: 6px 12px 6px 24px;
+        padding: 6px 30px 6px 40px;
+        text-align: left;
     }
 
     #suche::placeholder {
         font-size: 1.2rem;
+        text-align: left;
     }
-    
-    .footer-content {
-        flex-direction: column;
+
+    .search-icon {
+        left: 15px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .clear-icon {
+        right: 15px;
+        font-size: 1.2rem;
     }
 
     .team-members {
@@ -502,11 +582,12 @@ footer {
     }
 
     .team-member {
-        margin: 10px 0;
+        width: 100%;
+        max-width: 300px;
     }
 
-    .team-member img {
-        max-width: 100px;
+    .flip-card {
+        padding-top: 100%;
     }
 }
 
@@ -517,11 +598,29 @@ footer {
 
     #suche {
         font-size: 1rem;
-        padding: 6px 12px 6px 24px;
+        padding: 6px 25px 6px 35px;
         width: 100%;
+        text-align: left;
     }
 
     #suche::placeholder {
         font-size: 1rem;
+        text-align: left;
+    }
+
+    .search-icon {
+        left: 10px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .clear-icon {
+        right: 10px;
+        font-size: 1rem;
+    }
+
+    .cocktail-container {
+        min-width: 90%;
+        max-width: 90%;
     }
 }
