@@ -61,14 +61,11 @@ body {
 }
 
 #anzeige {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
-    padding: 2%;
-    justify-content: center;
-    align-content: center;
-    height: 100%;
-    box-sizing: border-box;
+    padding: 3%;
+    justify-content: center; /* Centers the grid container */
 }
 
 .cocktail-container {
@@ -76,11 +73,11 @@ body {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px #545454;
-    text-align: left;
+    text-align: center; /* Center-align text inside cocktail container */
     cursor: pointer;
-    min-width: 200px;
-    max-width: 200px;
+    width: 100%; /* Ensures the containers take up full column width */
 }
+
 
 .cocktail-container img {
     width: 100%;
@@ -141,30 +138,30 @@ button:hover::after, button.active::after {
     align-items: center;
     margin-bottom: 20px;
 }
-
 .details-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px; /* Ensures a consistent gap between elements */
+    align-items: flex-start; /* Ensures items are aligned at the start */
     padding: 20px;
     background-color: transparent;
     max-width: 800px;
     margin: 0 auto;
-    gap: 20px;
-    align-items: flex-start; /* Ensures consistent alignment */
 }
 
 .detail-bild {
-    max-width: 45%;
+    flex: 0 0 auto; /* Prevents the image from stretching */
+    max-width: 45%; /* Adjust the size as needed */
     height: auto;
     border-radius: 10px;
 }
 
 .info-container {
+    flex: 1 1 auto; /* Allows the container to grow */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensures the space between elements is consistent */
+    justify-content: flex-start; /* Ensures content starts at the top */
     align-items: flex-start;
-    max-width: 45%;
 }
 
 .info-container h3 {
@@ -523,6 +520,11 @@ footer {
 }
 
 @media (max-width: 600px) {
+    #anzeige {
+        grid-template-columns: 1fr;
+        justify-items: center; /* Centers the single item in the grid */
+    }
+    
     h1 {
         font-size: 1.2rem;
         padding: 10px 0;

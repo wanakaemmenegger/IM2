@@ -14,10 +14,11 @@ Die Arbeit mit ChatGPT hat einiges erleichtert. Allerdings musste man nach jeder
 Um unsere einzelen ToDos und abgeschlossenen Aufgaben für die gesamte Gruppe festzuhalten haben wir direkt das ReadMe File verwendet. So hatten wir immer einen sehr praktischen Überblick. In GitHub haben wir die erledigten Aufgaben
 
 ## Schwierigkeiten
-Durch die doppelte Suche nach Name und Zutaten haben wir
+- Doppelte Suche nach Zutat und Name
+- Zentrierung letzter Reihe
 
 ## Benutzte Ressourcen
-Wir haben unseren Code mit Hilfe von ChatGPT und der darin eingebundenen "AI JavaScript Programming API"-GPT erarbeitet. Wir konnten damit einzelne gewünschte Funktionen
+Wir haben unseren Code mit Hilfe von ChatGPT und der darin eingebundenen "AI JavaScript Programming API"- und "Tailwind CSS"-GPT erarbeitet. Wir konnten damit einzelne gewünschte Funktionen
 
 ### H3
 - Liste
