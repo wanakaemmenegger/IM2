@@ -21,7 +21,7 @@ Wir haben unseren Code mit Hilfe von ChatGPT und der darin eingebundenen "AI Jav
 
 Suche nach Zutat und Cocktail, ? für live Abfrage Suche
 # To Dos
-
+- Restet Filter zu "All" bei Klick auf Logo oben
 - Strukturierung und Bereinigung Code
 - Anhand von Gruppierung werden Bilder Detail getauscht (nach Glasstyp) - optional
 - Animationen - Boxen Suchresutlate leicht animieren - optional
