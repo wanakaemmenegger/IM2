@@ -54,6 +54,10 @@ document.addEventListener('DOMContentLoaded', function() {
         previousButton.style.display = 'none';
         nextButton.style.display = 'none';
         window.scrollTo(0, 0);
+
+        // Set the "All" filter button to active
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector('.filter-btn[data-type="a"]').classList.add('active');
     }
     initialeDatenLaden();
 
