@@ -22,5 +22,7 @@ Die doppelte Suche nach Zutat und Name hat uns einiges erschwert. In einem erste
 
 Auch das responsive Design hat viel Zeit in Anspruch genommen. Vor allem die Zentrierung der Cocktail-Vorschau in der Mobile Ansicht in Kombination mit der Zentrierung der letzten Reihe der Suchergebnisse war schwerer als gedacht. Es hat immer entweder das eine oder das andere funktioniert. Schlussendlich stellt sich heraus, dass am einen Ort mit einem Grid und am anderen Ort mit Flex-Boxen gearbeitet wurde und des deswegen Probleme gab.
 
+Bei der UX-Gestaltung  war es zeitaufwendig bis alle notwendigen Funktionen mit unseren Filtern etc. korrekt eingebaut und intuitiv waren. Zum Beispiel soll der Klick oben aufs Logo zurück zur allgemeinen Cocktail-Übersicht führen. Dabei muss zudem der Filter zurück auf "All" und das Suchfeld geleert werden. Bis wir all diese "Fehler" oder bessergesagt inkonsequenten Darstellungen gefunden haben, dauerte es seine Zeit. Durch viele test ist unsere Website nun aber intuitiv aufgebaut und die Klicks machen das, was ein User erwartet.
+
 ## Benutzte Ressourcen
 Wir haben unseren Code mit Hilfe von ChatGPT und der darin eingebundenen "AI JavaScript Programmierung API"- und "Tailwind CSS"-GPT erarbeitet. Wir konnten damit einzelne gewünschte Funktionen eingeben und haben unseren Code mit den entsprechenden Zeilen ergänzt. Auch die Website W3schools wurde als Spickzettel für spezifische Fragen verwendet.

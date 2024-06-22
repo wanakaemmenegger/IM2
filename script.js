@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Referenzen zu den wichtigen DOM-Elementen
     let suche = document.querySelector('#suche');
     let anzeige = document.querySelector('#anzeige');
     let ueberschrift = document.querySelector('#page-title');
@@ -21,12 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchWrapper = document.querySelector('.search-wrapper');
     const detailView = document.querySelector('.details-container');
 
+    // Anpassung der Suchfeldanzeige bei Detailansicht
     if (detailView) {
         searchWrapper.style.display = 'none';
     } else {
         searchWrapper.style.display = 'block';
     }
 
+    // Funktion zum Abrufen der Daten von der API
     async function holeDaten(url) {
         try {
             let antwort = await fetch(url);
@@ -39,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Funktion zum Laden der initialen Daten
     async function initialeDatenLaden() {
         headerImage.src = 'img/Cocktail_Finder_Header.jpg';
         let cocktailDaten = await holeDaten('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a');
@@ -55,12 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
         nextButton.style.display = 'none';
         window.scrollTo(0, 0);
 
-        // Set the "All" filter button to active
+        // Setze den "All"-Filter-Button auf aktiv
         document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
         document.querySelector('.filter-btn[data-type="a"]').classList.add('active');
     }
     initialeDatenLaden();
 
+    // Funktion zum Anzeigen der Cocktails
     function datenAnzeigen(cocktails) {
         anzeige.innerHTML = '';
         if (!cocktails || cocktails.length === 0) {
@@ -88,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
             anzeige.appendChild(div);
         });
 
+        // Fülle die Anzeige mit leeren Elementen auf, um ein gleichmässiges Raster zu gewährleisten
         fillGrid();
     }
 
@@ -107,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Event-Listener für die Sucheingabe
     suche.addEventListener('input', async function() {
         let abfrage = suche.value;
         document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
@@ -119,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Funktion zur kombinierten Suche nach Namen und Zutaten
     async function kombinierteSuche(abfrage) {
         let nameSuchUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + abfrage;
         let zutatSuchUrl = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + abfrage;
@@ -143,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
         datenAnzeigen(kombinierteErgebnisse);
     }
 
+    // Funktion zur Anzeige der Details eines Cocktails
     function cocktailDetailsAnzeigen(cocktail) {
         anzeige.innerHTML = '';
         cocktailTitle.innerText = cocktail.strDrink;
@@ -233,6 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo(0, 0);
     }
 
+    // Funktion zum Zurückkehren zu den Suchergebnissen
     zurueckButton.onclick = function() {
         headerImage.src = 'img/Cocktail_Finder_Header.jpg';
         datenAnzeigen(letzteErgebnisse);
@@ -250,6 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo(0, 0);
     };
 
+    // Funktion zum Zurücksetzen auf die Startansicht
     function resetToInitial() {
         initialeDatenLaden();
         suche.value = '';
@@ -265,9 +276,11 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo(0, 0);
     }
 
+    // Klick-Event für das Header-Icon und den Header-Text zum Zurücksetzen auf die Startansicht
     headerIcon.onclick = resetToInitial;
     headerText.onclick = resetToInitial;
 
+    // Klick-Event für den "Vorherige"-Button
     previousButton.onclick = function() {
         if (letzteErgebnisse.length > 0) {
             aktuellerIndex = (aktuellerIndex - 1 + letzteErgebnisse.length) % letzteErgebnisse.length;
@@ -275,6 +288,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    // Klick-Event für den "Nächste"-Button
     nextButton.onclick = function() {
         if (letzteErgebnisse.length > 0) {
             aktuellerIndex = (aktuellerIndex + 1) % letzteErgebnisse.length;
@@ -282,6 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    // Event-Listener für die Filter-Buttons
     document.querySelectorAll('.filter-btn').forEach(button => {
         button.addEventListener('click', async function() {
             suche.value = '';
@@ -297,12 +312,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Event-Listener für das Clear-Icon
     document.querySelector('.clear-icon').addEventListener('click', function() {
         suche.value = '';
         suche.focus();
         initialeDatenLaden();
     });
 
+    // Funktion zur Filter-Suche
     async function filterSuche(filter) {
         let nameSuchUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + filter;
         let zutatSuchUrl = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + filter;
@@ -327,6 +344,7 @@ document.addEventListener('DOMContentLoaded', function() {
         datenAnzeigen(kombinierteErgebnisse);
     }
 
+    // Event-Listener für die Tastatur
     document.addEventListener('keydown', function(event) {
         if (event.key === 'ArrowLeft') {
             previousButton.click();
@@ -335,6 +353,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Funktion zur Aktualisierung des Platzhalters im Suchfeld
     function updatePlaceholder() {
         if (window.innerWidth <= 800) {
             suche.placeholder = 'Search';
@@ -347,5 +366,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updatePlaceholder();
 
+    // Event-Listener für die Fenstergrösse
     window.addEventListener('resize', updatePlaceholder);
 });

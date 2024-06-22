@@ -3,49 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Preconnects für schnelleren Zugriff auf Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Einbindung der Schriftart Asap von Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Einbindung der externen CSS-Datei -->
     <link href="css/style.css" rel="stylesheet">
     <title>Cocktail Finder</title>
+    <!-- Favicon für die Website -->
     <link href="img/favicon.ico" rel="icon" type="image/x-icon">
+    
 </head>
 <body>
 
     <header class="white-header">
+        <!-- Logo im Header -->
         <img src="img/faveicon.ico" alt="Cocktail Icon" class="header-icon">
         <span class="header-text">Cocktail Finder</span>
     </header>
 
     <div id="header-container">
+        <!-- Header Bild -->
         <img src="img/Cocktail_Finder_Header.jpg" alt="Header Cocktail_Finder_Header" id="header">
         <div class="centered-content">
+            <!-- Hauptüberschrift der Seite -->
             <h1 id="page-title">Find your next Cocktail</h1>
+            <!-- Suchfeld, Lupe und Clear-icon -->
             <div class="search-wrapper">
                 <input type="text" id="suche" placeholder="Search for cocktail or ingredient" spellcheck="false" autocomplete="off"/>
                 <img src="img/Lupe.svg" alt="Search Icon" class="search-icon">
                 <span class="clear-icon">&#x2715;</span>
             </div>
         </div>
+        <!-- Container für den Cocktail-Titel (wird versteckt, wenn nicht benötigt) -->
         <div id="cocktail-title-container" style="display: none;">
             <h1 id="cocktail-title"></h1>
         </div>
+        <!-- Navigationsbuttons (werden versteckt, wenn nicht benötigt) -->
         <button id="previousButton" style="display: none;">&lt;</button>
         <button id="nextButton" style="display: none;">&gt;</button>
     </div>
+    <!-- Filterleiste -->
     <div class="white-bar">
         <button class="filter-btn active" data-type="a">All</button>
         <button class="filter-btn" data-type="Vodka">Vodka</button>
         <button class="filter-btn" data-type="Gin">Gin</button>
         <button class="filter-btn" data-type="Rum">Rum</button>
     </div>
+    <!-- Button zum Zurückkehren zu den Ergebnissen (wird versteckt, wenn nicht benötigt) -->
     <div id="button-container" style="display: none;">
         <button id="zurueckButton">
             <span class="arrow">&#x2196;</span> Back to results
         </button>
     </div>
+    <!-- Anzeige für die Cocktails -->
     <div id="anzeige"></div>
 
+
+  <!-- Footer inkl. Team-Mitglieder -->
     <footer>
         <div class="footer-content">
             <h2>Our Team's Favorites</h2>
@@ -57,7 +73,7 @@
                                 <img src="img/Foto_Agnes_Boldis.jpg" alt="Agnes Boldis">
                             </div>
                             <div class="flip-card-back">
-                                <p>Projekt-Aufgaben:  Ideen-Findung, Gestaltung, Testen der Website</p>
+                                <p>Projekt-Aufgaben: Ideen-Findung, Gestaltung, Testen der Website</p>
                             </div>
                         </div>
                     </div>
@@ -99,6 +115,7 @@
             <p>Designed by Wanaka Emmenegger, Maria Reichmuth, Agnes Boldis</p>
         </div>
     </footer>
+    <!-- Einbindung der externen JavaScript-Datei -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,9 +1,11 @@
+/* Basis-Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Header-Container */
 #header-container {
     position: relative;
     width: 100%;
@@ -15,6 +17,7 @@
     height: auto;
 }
 
+/* Zentrierte Inhalte im Header */
 .centered-content {
     position: absolute;
     top: 50%;
@@ -26,12 +29,14 @@
     border-radius: 15px;
 }
 
+/* Hauptüberschriften */
 #page-title, #cocktail-title {
     font-size: 4rem;
     margin-bottom: 10px;
     cursor: default;
 }
 
+/* Suchfeld */
 #suche {
     width: calc(100% - 40px);
     font-size: 1.8rem;
@@ -54,18 +59,20 @@
     outline: none;
 }
 
+/* Body-Styles */
 body {
     font-family: 'Asap', sans-serif;
     background-color: rgb(225, 243, 250);
     padding-top: 70px;
 }
 
+/* Anzeige der Cocktails */
 #anzeige {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
     padding: 3%;
-    justify-content: center; /* Centers the grid container */
+    justify-content: center; /* Zentriert das Grid-Container */
 }
 
 .cocktail-container {
@@ -73,11 +80,10 @@ body {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px #545454;
-    text-align: center; /* Center-align text inside cocktail container */
+    text-align: center; /* Zentriert den Text im Cocktail-Container */
     cursor: pointer;
-    width: 100%; /* Ensures the containers take up full column width */
+    width: 100%; /* Sorgt dafür, dass die Container die volle Spaltenbreite einnehmen */
 }
-
 
 .cocktail-container img {
     width: 100%;
@@ -100,6 +106,7 @@ body {
     max-width: 100%;
 }
 
+/* Buttons */
 button {
     font-size: 1.5rem;
     padding: 10px 20px;
@@ -132,17 +139,20 @@ button:hover::after, button.active::after {
     width: 100%;
 }
 
+/* Bild-Container */
 .image-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
 }
+
+/* Detail-Container */
 .details-container {
     display: flex;
     flex-direction: row;
-    gap: 20px; /* Ensures a consistent gap between elements */
-    align-items: flex-start; /* Ensures items are aligned at the start */
+    gap: 20px; /* Sorgt für einen konsistenten Abstand zwischen den Elementen */
+    align-items: flex-start; /* Richtet die Elemente am Anfang aus */
     padding: 20px;
     background-color: transparent;
     max-width: 800px;
@@ -150,17 +160,17 @@ button:hover::after, button.active::after {
 }
 
 .detail-bild {
-    flex: 0 0 auto; /* Prevents the image from stretching */
-    max-width: 45%; /* Adjust the size as needed */
+    flex: 0 0 auto; /* Verhindert, dass das Bild gestreckt wird */
+    max-width: 45%; /* Passt die Grösse nach Bedarf an */
     height: auto;
     border-radius: 10px;
 }
 
 .info-container {
-    flex: 1 1 auto; /* Allows the container to grow */
+    flex: 1 1 auto; /* Ermöglicht dem Container zu wachsen */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Ensures content starts at the top */
+    justify-content: flex-start; /* Stellt sicher, dass der Inhalt oben beginnt */
     align-items: flex-start;
 }
 
@@ -174,6 +184,7 @@ button:hover::after, button.active::after {
     color: #333;
 }
 
+/* Balken für Filter */
 .white-bar {
     height: 70px;
     background-color: white;
@@ -184,6 +195,7 @@ button:hover::after, button.active::after {
     margin-bottom: 20px;
 }
 
+/* Button-Container */
 #button-container {
     display: flex;
     flex-direction: column;
@@ -228,6 +240,7 @@ button:hover::after, button.active::after {
     width: 100%;
 }
 
+/* Header-Styles */
 .white-header {
     background-color: #ffffff;
     padding: 10px 0;
@@ -257,6 +270,7 @@ button:hover::after, button.active::after {
     cursor: pointer;
 }
 
+/* Footer-Styles */
 footer {
     background-color: pink;
     color: white;
@@ -271,6 +285,7 @@ footer {
     margin: 5px 0;
 }
 
+/* Detail Cocktails */
 .ingredients-list {
     padding: 10px;
     margin-bottom: 10px;
@@ -313,6 +328,7 @@ footer {
     color: #d66734;
 }
 
+/* Cocktail-Titel */
 #cocktail-title-container {
     position: absolute;
     top: 50%;
@@ -346,6 +362,7 @@ footer {
     margin-bottom: 20px;
 }
 
+/* Team-Mitglieder */
 .team-members {
     display: flex;
     justify-content: center;
@@ -431,6 +448,7 @@ footer {
     color: white;
 }
 
+/* Suchfeld*/
 .search-wrapper {
     position: relative;
     display: inline-block;
@@ -463,6 +481,7 @@ footer {
     display: block;
 }
 
+/* Media-Queries - Responsives Design */
 @media (max-width: 800px) {
     h1 {
         font-size: 2rem;
@@ -522,7 +541,7 @@ footer {
 @media (max-width: 600px) {
     #anzeige {
         grid-template-columns: 1fr;
-        justify-items: center; /* Centers the single item in the grid */
+        justify-items: center; /* Zentriert das einzelne Element im Grid */
     }
     
     h1 {
