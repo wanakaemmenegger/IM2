@@ -499,7 +499,7 @@ footer {
 
     .details-container {
         flex-direction: column;
-        align-items: left;
+        align-items: start;
     }
 
     .detail-bild, .info-container {
@@ -560,7 +560,7 @@ footer {
 
     .details-container {
         flex-direction: column;
-        align-items: left;
+        align-items: start;
     }
 
     .detail-bild, .info-container {
